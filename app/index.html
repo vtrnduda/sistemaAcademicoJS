@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Acadêmico - IFPB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .form-container div {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 10px;
+            width: calc(100% - 40px);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div>
+            <h2>Cadastrar Aluno</h2>
+            Nome:<input id="nomealuno"><br>
+            Idade:<input id="idade"><br>
+            Matrícula:<input id="matricula"><br>
+
+            <button onclick="alunocontrolador.inserir()" id="botaoCadastrarAtualizarAluno">Cadastrar</button>
+            <button onclick="alunocontrolador.listarAlunosMenoresIdade()">Mostrar Menores</button>
+
+            <ol id="listaAlunos">
+            </ol>
+        
+            <ul id="listaAlunosMenores">
+            </ul>
+        
+        </div>
+
+        <div>
+            <h2>Cadastrar Disciplina</h2>
+            Código:<input id="codigo"><br>
+            Nome:<input id="nomedisciplina"><br>
+
+            <button onclick="disciplinacontrolador.inserir()" id="botaoCadastrarAtualizarDisciplina">Cadastrar Disciplina</button>
+
+            <ol id="listaDisciplinas"></ol>
+        </div>
+
+        <div>
+            <h2>Cadastrar Aluno em Disciplina</h2>
+            Código da Disciplina:<input id="codigodisciplina"><br>
+            Matrícula do Aluno:<input id="matriculaaluno"><br>
+
+            <button onclick="disciplinacontrolador.inserirAlunoNaDisciplina()" id="botaoInserirAluno">Cadastrar aluno na disciplina</button>
+
+            <ol id="listaAlunosComDisciplinas"></ol>
+        </div>
+    </div>
+
+    
+    <script src="js/modelo/aluno.js"></script>
+    <script src="js/repositorio/aluno_repositorio.js"></script>
+    <script src="js/servico/aluno_service.js"></script>
+    <script src="js/controlador/aluno_controlador.js"></script>
+    <script src="js/modelo/disciplina.js"></script>
+    <script src="js/repositorio/disciplina_repositorio.js"></script>
+    <script src="js/servico/disciplina_service.js"></script>
+    <script src="js/controlador/disciplina_controlador.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
